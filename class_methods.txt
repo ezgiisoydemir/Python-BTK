@@ -1,0 +1,24 @@
+Nesne Tabanlı Programlanın ileri düzey kavramlarından Sınıf Metotlarını (class methods) inceleyeceğiz. 
+Sınıf metotlarını daha iyi kavrayabilmek için AdresDefteri sınıfı örneği üzerinden gideceğiz.
+Rehberimizde kayıtlı kişi sayısını öğrenmemizi sağlayacak örnek metotu ekleyelim.
+
+def kisiSayisiniGoster(self):
+         print(len(self.kisiler))
+
+        
+Bu tanımladığımız metot ile sınıf niteliği olan kisiler'e erişerek uzunluğunu ekrana yazdıracağız. 
+Tanımladığımız herhangi bir değişken üzerinde kişi sayısına ulaşabiliriz.
+Burada kodların çalışma mantığı açısından bir tutarsızlık söz konusu.  
+Bu tanımladığımız fonksiyon tek tek sınıfın öğelerini değil, genel olarak sınıfı ilgilendiriyor. 
+Bu açıdan, tanımladığımız fonksiyonu örnek değişkenlerin bağımsız olarak kullanmak daha mantıklı olacaktır. 
+Burada imdadımıza classmethod yetişiyor.
+
+@classmethod ve cls
+Nesneye dayalı programlanın ilk konusunda self kelimesinden bahsetmiştik. 
+self kelimesi ile sınıf içindeki örnek metotlarına erişiyorduk. 
+Yine aynı yapıda olan cls kelimesi ile sınıf metotlarına erişeceğiz.
+@classmethod
+    def kisiSayisiniGoster(cls):
+        print(len(cls.kisiler))
+Yukarıdaki örnekte gördüğünüz classmethod ifadesi ile sınıf içerisindeki örnek metotlarını, 
+sınıf metotlarından ayırmak için kullanılır. İsminin önünde @ işareti olan öğelere dekoratör (decorator) adı verilir. Görmüş olduğunuz bu yardımcı dekoratör ile bir fonksiyonu sınıf metoduna kolayca dönüştürüyoruz.
