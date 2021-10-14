@@ -1,0 +1,97 @@
+Nesne Tabanlı Programlama
+OOP, uygulamaları nesneler kullanarak oluşturmak demektir.
+Geliştirdiğimiz uygulamalardaki yordamları direk uygulama koduna yazmayıp, 
+sınıflar içinde yazıyor ve sınıflardan nesneler türetiyor,
+bunları nesneler üzerinden çağırıyorsanız OOP yapıyorsunuz demektir.
+
+Sınıflar
+OOP temelinde sınıf (class) adlı kavram bulunur. 
+Sınıflar, nesne üretmemizi sağlayan veri tipleridir. 
+Şimdi bir sınıf nasıl tanımlanır öğrenelim:
+
+class Personel:
+
+veya
+
+class Personel():
+
+Gördüğünüz gibi boş bir sınıfı bu şekilde tanımlıyoruz. 
+Tanımlama işlemini öğrendiğimize göre sınıfları nasıl kullanacağımızı inceleyelim. 
+Sınıfların tanımlanması fonksiyonların tanımlanmasıyla aynıdır. 
+Fonksiyonu kullanmak istediğimizde çağırmamız gerekiyordu fakat sınıflar için aynı durum söz konusu değil.
+
+class Personel:
+    'Personel Sınıfımız'
+    personel_isimi = "Gokhan Yavas"
+    personel_unvani = "Python Developer"
+    personel_maasi = 5000
+print(personel_isimi, personel_unvani, personel_maasi, sep=",")
+
+Yukarıdaki sınıfı kullanarak fonksiyon oluşturup sınıf-fonksiyon arasındaki farkı daha iyi kavrayabilirsiniz. 
+Örnekte print fonksiyonu ile sınıfın içinde yazdırma işlemi yaptık. 
+Aynı işlemi print fonksiyonunu sınıfın dışında kullanarakta yapabilirsiniz.
+
+class Personel:
+    'Personel Sınıfımız'
+    personel_isimi = "Gokhan Yavas"
+    personel_unvani = "Python Developer"
+    personel_maasi = 5000
+print(Personel.personel_isimi)
+print(Personel.personel_maasi)
+
+Eğer sınıfın niteliklerinin ne zaman çalışacağını kontrol etmek istersek bu örnekteki gibi kullanırız.
+Tanımladığımız sınıfın bir işe yarabilmesi için, 
+sınıfta belirtilen nitelikleri taşıyan birden fazla sınıf üyesi meydana getirebilmemiz gerekir. 
+Şimdi dikkatlice bakın:
+
+class Personel:
+    'Personel Sınıfımız'
+personel_unvani = "Python Developer"
+personel_maasi = 5000
+gokhan = Personel
+
+Burada sınıfımızı gokhan isimli değişkene atadık. Bu işleme örnekleme (instantiation)  adı verilir.
+Python programlama dilinde bir fonksiyonu kullanışlı hale getirme işlemine ‘çağırma’,
+bir sınıfı kullanışlı hale getirme işlemine ise ‘örnekleme’ adı verilmektedir.
+
+Örnek Nitelikleri
+Şimdiye kadar anlattıklarımız sınıflar da faydalı işler yapmaya pek yeterli değil. 
+Sınıflar konusunda çıtamızı yükseltmek için, sınıf niteliklerinin (class attributes) yanı sıra 
+OOP'nin önemli bir parçası olan örnek niteliklerinden (instance attributes) de söz etmemiz gerekiyor. 
+Örnek niteliklerini öğrendikten sonra sınıf nitelikleri arasındaki farkları görünce sınıf niteliklerini 
+daha iyi anlamış olacaksınız.
+
+
+__init__ Fonksiyonu ve self
+Örnek niteliklerini tanımlamak için __int__ Fonksiyonunu ve self yardımcı araçlarını kullanırız. 
+Bu iki aracın kullanımı şu şekilde:
+
+class Personel:
+    'Personel Sınıfımız'
+def __init__(self):
+        self.isimleri = []
+
+Yukarıda gördüğünüz gibi tanımlanmaktadır bu fonksiyon ve yardımcısı. 
+init fonksiyonun görevi, sınıfımızı örneklediğimiz sırada, yani gokhan = Personel gibi bir komut verdiğimiz anda
+oluşturulacak nitelikleri ve gerçekleştirilecek işlemleri tanımlamaktır. 
+Bu fonksiyonun ilk parametresi her zaman self olmak zorundadır. 
+Fonksiyonun ilk parametresini self olarak belirleyerek, 
+örnek niteliklerinin self kelimesi ile temsil edilmesini sağlamış olduk. 
+Python'da bu konuya ilişkin kural şudur: 
+Sınıf içindeki bir fonksiyonun ilk parametresi ne ise, 
+o fonksiyon içindeki örnek niteliklerini temsil eden kelime de odur.
+
+class Gokhan:
+    def __init__(x,y,z):
+        x.misli = []
+        
+__init__ fonksiyonun ilk parametresi x olduğu için, örnek niteliğini temsil eden kelime x olur.
+Dolayısıyla, misli örnek niteliğimizin başına x getirilir.
+__init__ fonksiyonun ilk parametresi x olarak belirtildikten sonra, 
+bu fonksiyon içindeki bütün nitelikler x  kelimesini alacaktır.
+Nitelikleri temsil etmek için self dışında bir kelime kullanmayın. 
+Python bu kelimeye bize dayatmasada, topluluk içinde self yerleşmiş bir gelenektir. Bu yüzden geleneği sürdürünüz.
+
+
+
+

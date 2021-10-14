@@ -1,0 +1,90 @@
+Bu kısıma kadar, sınıflar, örnekler, sınıf nitelikleri ve örnek nitelikleri konusunda bilgi edindik. 
+Şimdi bu öğrendiklerimizi kullanarak anlamlı birşeyler yazalım. 
+Böylece öğrendiklerimiz pekişecek ve örnek metotlarını (instance methods) anlamış olacağız.
+
+class AdresDefteri:
+    'Adres Defteri Sınıfımız'
+    kisiler = []
+
+def __init__(self, isim):
+        self.isim = isim
+        self.numaralar = []
+        self.kisiEkle()
+
+def kisiEkle(self):
+        self.kisiler.append(self.isim)
+        self.kisiler.append(self.numaralar)
+        print("{},{} rehbere eklendi" .format(self.isim, self.numaralar))
+
+def kisiyiGoruntule(self):
+        print("Kisi Listesi:")
+        for rehber in self.kisiler:
+            print(rehber)
+
+def numaraEkle(self, numaralar):
+        self.numaralar.append(numaralar)
+
+def numaralariGoruntule(self):
+        print("{} isimli kisinin numaralari:".format(self.isim))
+        for numaralar in self.numaralar:
+            print(numaralar)
+
+Sınıfımızı hazırladık. Satır satır kodlarımızı açıklayalım:
+Öncelikle sınıfımızı tanımlıyoruz
+
+class AdresDefteri:
+    'Adres Defteri Sınıfımız'
+
+
+Ardından sınıfımıza kisiler isimli sınıf niteliği ekliyoruz.
+class AdresDefteri:
+    'Adres Defteri Sınıfımız'
+    kisiler = []
+
+
+Sınıf niteliğinin özelliği, o sınıfın bütün örnekleri tarafından paylaşılıyor olmasıdır. 
+Sınıf ve sınıf niteliğimizi tanımladıktan sonra __init__ adlı fonksiyonumuzu oluşturuyoruz.
+def __init__(self, isim):
+        self.isim = isim
+        self.numaralar = []
+        self.kisiEkle()
+
+Bu fonksiyonun özelliği, sınıfın örneklenmesi ile birlikte otomatik çalıştırılacak olması. 
+Burada tanımladığımız self.isim ve self.numaralar isimli 2 örnek niteliklerine sınıfımızın her yerinden ulaşabileceğiz.
+self.kisiEkle örnek metoduna (instance method) atıfta bulunuyoruz. Bahsettiğimiz metodu şöyle tanımladık:
+def kisiEkle(self):
+        self.kisiler.append(self.isim)
+        self.kisiler.append(self.numaralar)
+        print("{},{} rehbere eklendi" .format(self.isim, self.numaralar))
+
+Burada, kisiler değişkenine nasıl ulaştığımıza (eriştiğimize) dikkat edin. 
+Diğer 3  fonksiyonda aynı kisiEkle gibi örnek metodudur.
+Şimdi bu kodları nasıl kullanıcağımızı öğrenelim. 
+PyCharm'da yazdığımız için hemen alt kısımda Python Console sekmesine tıklayın. 
+(İsteyenler etkileşimli kabukta deneyebilirler.) 
+Hemen o kısımda defter.py isimli sınıfımızı içeren dosyamızı import (içe aktarma) ediyoruz:
+import defter
+Ardından sınıfımızın 2 farklı örneğini çıkaralım:
+
+k1 = defter.AdresDefteri("Gokhan")
+k2 = defter.AdresDefteri("Gurkan")
+
+Bu yolla,  defter isimli modül içindeki AdresDefteri() sınıfı sırasıyla Gokhan ve Gurkan parametreleri ile çağırarak
+k1 ve k2 isimli 2 farklı sınıf örneği oluşturmuş olduk. 
+Bu kısımda init fonksiyonun devreye girdiğine dikkat edin.
+
+kisiEkle() isimli fonksiyonu __init__ fonksiyonu içerisinde çağırdığımız için kişi rehbere eklendi ve mesaj verildi. 
+Eklediğimiz kişileriler telefon numaraları ekleyelim:
+
+k1.numaraEkle("0555 555 55 55")
+k1.numaraEkle("0555 555 88 66")
+k2.numaraEkle("1234 123 12 23")
+
+Eklediğimiz kişi ve numaraları görüntüleyelim:
+
+k1.numaralariGoruntule()
+k1 sınıfı örneğine ait numaralar:
+Gokhan isimli kisinin numaralari:
+0555 555 55 55
+0555 555 88 66
+Aynı şekilde kisiyiGoruntule fonksiyonunu kullanarak kişileri görüntüleyebilirsiniz.
