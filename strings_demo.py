@@ -35,8 +35,12 @@ result = "Benim adım {} {}, yaşım {} ve mesleğim {}.".format(name,surname,ag
 result = f"Benim adım {name} {surname}, Yasım {age} ve mesleğim {job}."
 
 # 7- "Hello World" ifadesindeki w harfini "W" ile değiştirin
+# Birinci yontem parcalayarak W harfini eklemek
 s = "Hello World"
 s = s[0:6] + "W" + s[-4:]
+print(s)
+
+#Ikincisi ise yer degistirme islemi
 s.replace("w","W")
 
 # 8- "abc" ifadesini yan yana 3 defa yazın
