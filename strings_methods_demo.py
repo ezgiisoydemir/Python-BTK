@@ -8,7 +8,7 @@ message = message.lstrip() #sadece soldan siler
 message = message.rstrip() #sadece sağdan siler
 
 message = message.lstrip(":/pth") #Soldan parantez içine yazılan kısımları siler
-print(message)
+print(message)                    #Sonuc www.ezgisoydemir.com
 
 # 2. "www.ezgisoydemir.com" içindeki ezgisoydemir bilgisi haricindeki her karakteri silin
 message = "www.ezgisoydemir.com".strip("w.moc")
@@ -19,12 +19,13 @@ print(message)
 
 # 4. "website" içinde kaç tane a karakteri vardır? (count'a')
 message = website.count("a")
+
 message = website.count("www",0,10) #0 ile 10 arasında www var mı
 print(message)
 
 # 5. "website" www ile başlayıp com ile bitiyor mu?
 isFound = website.startswith("www")
-print(isFound)
+print(isFound) #false
 
 isFound = website.endswith("com")
 print(isFound)
