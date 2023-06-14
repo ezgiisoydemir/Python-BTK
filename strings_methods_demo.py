@@ -28,22 +28,26 @@ isFound = website.startswith("www")
 print(isFound) #false
 
 isFound = website.endswith("com")
-print(isFound)
+print(isFound) #True
 
 # 6. "website" içinde '.com' ifadesi var mı?
-index = website.find(".com")
-index = website.index(".com")
+index = website.find(".com") #22
+index = website.find(".com", 0 , 10) #-1
+
+index = course.find("Python") #1
+index = course.rfind("Python") #26 Sagdan sola sayar
 print(index)
 
 # 7. "course" içindeki karakterlerin hepsi alfabetik mi?(isalpha, isdigit)
-isFound = course.isalpha()
+isFound = course.isalpha() #False - alpha = Alfabedik
+isFound = course.isdigit() #False Gelen degerler bir rakam mi diye baktik - digit = Digital?
 print(isFound)
 
 # 8. "Contents" ifadesini satırda 50 karakter içine yerleştirip sağ soluna * ekleyin.
 message ="Contents"
 message = message.center(50,"*")
-message = message.ljust(50,"*")
-message = message.rjust(50,"*")
+message = message.ljust(50,"*") #Yildzlar sadece solda olur
+message = message.rjust(50,"*") # yildizlar sadece sagda olur
 print(message)
 
 # 9. "course" karakter dizisindeki tüm boşluk karakterlerini '-' ile değiştirin
@@ -52,6 +56,8 @@ message = "-".join(message)
 print(message)
 
 message=course.replace(" ","-")
+message=course.replace(" ","-",5) #Sadece 5 karakteri degistirir. Yani son cizgi python ve programlama arasinda olur
+message=course.replace(" ","") # Butun bosluk karakterlerini siler
 
 # 10. "Hello World" karakter dizisinin 'World' ifadesini 'There' olarak değiştirin
 message = "Hello World"
@@ -59,5 +65,5 @@ message = message.replace("World","There")
 print(message)
 
 # 11. "course" karakter dizisini boşluk karakterlerinden ayırın.
-message = course.split()
+message = course.split(' ')
 print(message)
