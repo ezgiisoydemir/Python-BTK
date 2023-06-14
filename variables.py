@@ -48,3 +48,4 @@ print(a+b) #1020
 firstName = 'Sadık'
 lastName = ' Turan'
 print(firstName + lastName) #Sadık Turan
+# Soyadinin basinda bosluk oldugu icin cikti sadik turan seklinde. Bosluk olmasaydi sadikturan yazacakti.
