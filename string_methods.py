@@ -14,7 +14,8 @@ message = message.split() # Boşluklardan itibaren dizilere ayırma - ['Hello', 
 
 message = message.split(".") # Noktadan itibaren dizilere ayırma - ['Hello there', ' My name is Ezgi Soydemir']
 
-message = " ".join(message) # Aralara boşluk koyarak ayrılan cümleyi birleştirir
+message = message.split()
+message = " ".join(message) # Ayrilan kelimeleri aralara boşluk koyarak birleştirir
 
 index = message.find("Ezgi")
 print(index) # Cümlenin içinden ezgi kelimesini arattık. Bunu da hangi sayıda başladığını öğrendik
