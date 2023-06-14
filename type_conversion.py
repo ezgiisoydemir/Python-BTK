@@ -18,30 +18,30 @@ isOnline = True     #bool
 
 #int to float
 
-# x = float(x)
-# print(x)
-# print(type(x))
+x = float(x)
+print(x)
+print(type(x))
 
-# y = int(y)
-# print(y)
-# print(type(y))
+y = int(y)
+print(y)
+print(type(y))
 
-# result = str(x) + str (y)
-# print(result)
-# print(type(result))
+result = str(x) + str (y)
+print(result)
+print(type(result))
 
 #bool to str
 
-# isOnline = str(isOnline)
-# print(isOnline)
-# print(type(isOnline))
+isOnline = str(isOnline)
+print(isOnline)       #Sonuc sadece ekrana True yazar
+print(type(isOnline))
 
 #bool to int
 
 isOnline = False
 
 isOnline = int(isOnline)
-print(isOnline)
+print(isOnline)       # snucu 0 verir cunku false
 print(type(isOnline))
 
 
