@@ -32,7 +32,7 @@ name, surname, age, job = "Ezgi","Soydemir",22,"mühendis"
 #    "Benim adım Ezgi Soydemir, Yasım 22 ve mesleğim mühendis"
 result = "Benim adım " + name + " " + surname + ", yasım " + str(age) + " ve mesleğim " + job
 result = "Benim adım {} {}, yaşım {} ve mesleğim {}.".format(name,surname,age,job)
-result = "Benim adım {name} {surname}, Yasım {age} ve mesleğim {job}."
+result = f"Benim adım {name} {surname}, Yasım {age} ve mesleğim {job}."
 
 # 7- "Hello World" ifadesindeki w harfini "W" ile değiştirin
 s = "Hello World"
