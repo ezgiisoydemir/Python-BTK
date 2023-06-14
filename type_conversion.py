@@ -1,6 +1,7 @@
 """
 x = input ("1.Sayi: ")
 y = input ("2.Sayi: ")
+# Bu sekilde sistem sayiyi string alir! Ilk once int haline getirmen lazim
 
 toplam = int(x) + int (y)
 
